@@ -522,64 +522,65 @@ select:focus-visible {
     }
 }
 
-/* Industrial photography with soft overlays that keep text readable. */
+/* Use still industrial photography instead of decorative/cartoon backgrounds. */
 .hero {
     background:
-        linear-gradient(110deg, rgba(247, 250, 249, 0.78) 0%, rgba(245, 249, 248, 0.66) 52%, rgba(238, 246, 245, 0.48) 100%),
+        radial-gradient(ellipse at 50% 43%, rgba(248, 251, 250, 0.42) 0%, rgba(248, 251, 250, 0.3) 43%, rgba(248, 251, 250, 0) 78%),
+        linear-gradient(110deg, rgba(247, 250, 249, 0.18) 0%, rgba(245, 249, 248, 0.14) 52%, rgba(238, 246, 245, 0.1) 100%),
         url("https://images.pexels.com/photos/236705/pexels-photo-236705.jpeg?auto=compress&cs=tinysrgb&w=2200") center 52% / cover no-repeat;
 }
 
 .technology-section {
     background:
-        linear-gradient(rgba(249, 251, 250, 0.78), rgba(245, 249, 248, 0.72)),
+        linear-gradient(rgba(248, 250, 249, 0.18), rgba(245, 248, 247, 0.14)),
         url("https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=2200&q=85") center / cover fixed no-repeat;
 }
 
 .solutions-section {
     background:
-        linear-gradient(rgba(244, 248, 247, 0.76), rgba(246, 249, 248, 0.72)),
-        url("https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=2200&q=85") center 45% / cover fixed no-repeat;
+        linear-gradient(rgba(248, 250, 249, 0.54), rgba(245, 248, 247, 0.5)),
+        url("https://images.pexels.com/photos/236705/pexels-photo-236705.jpeg?auto=compress&cs=tinysrgb&w=2200") center 45% / cover fixed no-repeat;
 }
 
 .stats-section {
     background:
-        linear-gradient(115deg, rgba(25, 57, 79, 0.78), rgba(29, 94, 91, 0.72)),
+        linear-gradient(115deg, rgba(25, 57, 79, 0.62), rgba(29, 94, 91, 0.56)),
         url("https://images.pexels.com/photos/236705/pexels-photo-236705.jpeg?auto=compress&cs=tinysrgb&w=2200") center 52% / cover fixed no-repeat;
 }
 
 .products-section {
     background:
-        linear-gradient(rgba(249, 251, 250, 0.78), rgba(246, 249, 249, 0.72)),
+        linear-gradient(rgba(248, 250, 249, 0.72), rgba(245, 248, 247, 0.68)),
         url("https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=2200&q=85") center / cover fixed no-repeat;
 }
 
 .services {
     background:
-        linear-gradient(rgba(244, 248, 247, 0.77), rgba(246, 249, 248, 0.72)),
+        linear-gradient(rgba(244, 248, 247, 0.26), rgba(246, 249, 248, 0.22)),
         url("https://images.pexels.com/photos/2760243/pexels-photo-2760243.jpeg?auto=compress&cs=tinysrgb&w=2200") center 42% / cover fixed no-repeat;
 }
 
 .testimonials-section {
     background:
-        linear-gradient(rgba(248, 250, 249, 0.8), rgba(241, 247, 246, 0.75)),
+        linear-gradient(rgba(248, 250, 249, 0.4), rgba(241, 247, 246, 0.36)),
         url("https://images.pexels.com/photos/2760243/pexels-photo-2760243.jpeg?auto=compress&cs=tinysrgb&w=2200") center 48% / cover fixed no-repeat;
 }
 
 .map-section {
     background:
-        linear-gradient(rgba(243, 248, 247, 0.8), rgba(237, 245, 246, 0.76)),
+        linear-gradient(rgba(243, 248, 247, 0.38), rgba(237, 245, 246, 0.34)),
         url("https://images.pexels.com/photos/236705/pexels-photo-236705.jpeg?auto=compress&cs=tinysrgb&w=2200") center 52% / cover fixed no-repeat;
 }
 
 .contact {
     background:
-        linear-gradient(115deg, rgba(18, 42, 60, 0.84), rgba(25, 75, 74, 0.76)),
+        linear-gradient(115deg, rgba(18, 42, 60, 0.72), rgba(25, 75, 74, 0.66)),
         url("https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=2200&q=85") center 52% / cover fixed no-repeat;
 }
 
 footer {
     background:
-        linear-gradient(115deg, rgba(15, 31, 45, 0.88), rgba(19, 51, 54, 0.82)),
+        linear-gradient(115deg, rgba(15, 31, 45, 0.78), rgba(19, 51, 54, 0.72)),
         url("https://images.pexels.com/photos/236705/pexels-photo-236705.jpeg?auto=compress&cs=tinysrgb&w=2000") center / cover no-repeat;
 }
 
@@ -612,12 +613,19 @@ footer {
     backdrop-filter: blur(22px) saturate(130%);
 }
 
+.service-card,
+.service-icon,
+.solution-header::before {
+    animation: none !important;
+}
+
 @media (max-width: 768px) {
     .technology-section,
     .solutions-section,
     .stats-section,
     .products-section,
     .services,
+    .approach-section,
     .testimonials-section,
     .map-section,
     .contact {
@@ -631,9 +639,39 @@ footer {
     .stats-section,
     .products-section,
     .services,
+    .approach-section,
     .testimonials-section,
     .map-section,
     .contact {
         background-attachment: scroll;
+    }
+}
+
+.hero-content,
+.technology-heading,
+.services-heading,
+.solutions-heading {
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 26px;
+    background: rgba(248, 252, 251, 0.8);
+    box-shadow: 0 18px 48px rgba(24, 48, 62, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.94);
+    -webkit-backdrop-filter: blur(16px) saturate(125%);
+    backdrop-filter: blur(16px) saturate(125%);
+}
+
+.submit-button-icon {
+    display: block;
+    flex: 0 0 auto;
+}
+
+.submit-button-label {
+    display: block;
+}
+
+@media (max-width: 680px) {
+    .technology-heading {
+        margin-bottom: 24px;
+        padding: 24px 18px;
+        border-radius: 20px;
     }
 }
